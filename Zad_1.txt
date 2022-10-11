@@ -1,0 +1,6 @@
+def PrintNames(names):
+    for name in names:
+        print(name)
+
+names = ['Tomek', "Marek", "Arek", "John", "Marcin"]
+PrintNames(names)

@@ -1,0 +1,7 @@
+def PrintEven(numbers):
+    for number in numbers:
+        if number % 2 == 0:
+            print(number)
+
+numbers = range(10, 21, 1)
+PrintEven(numbers)

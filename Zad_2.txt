@@ -1,0 +1,15 @@
+def DoubleNumbersI(numbers):
+    doubleNumbers = []
+    for number in numbers:
+        doubleNumbers.append(number*2)
+    return doubleNumbers
+
+def DoubleNumbersII(numbers):
+    doubleNumbers = [number*2 for number in numbers]
+    return doubleNumbers
+
+numbers = [1, 2, 3, 4, 5]
+doubleNumbers = DoubleNumbersI(numbers)
+print(doubleNumbers)
+doubleNumbers = DoubleNumbersII(numbers)
+print(doubleNumbers)

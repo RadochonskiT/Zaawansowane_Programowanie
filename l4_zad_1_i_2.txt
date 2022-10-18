@@ -1,0 +1,93 @@
+from statistics import mean
+
+class Student:
+    def __init__(self, name: str, marks: list):
+        self.name = name
+        self.marks = marks
+    
+    def __str__(self) -> str:
+        return f'student {self.name}'
+
+    def is_passed(self) -> bool:
+        average = mean(self.marks)
+        if average > 5.0:
+            return True
+        else:
+            return False
+
+student_1 = Student('Tomek', [5, 5, 5, 6])
+student_2 = Student('Piotrek', [2, 2, 2, 2])
+student_3 = Student('Wladek', [3, 3, 3, 3])
+
+print(student_1.is_passed())
+print(student_2.is_passed())
+
+class Library:
+    def __init__(self, city: str, street: str, zip_code: str, open_hours: str, phone: str):
+        self.city = city
+        self.street = street
+        self.zip_code = zip_code
+        self.open_hours = open_hours
+        self.phone = phone
+
+    def __str__(self) -> str:
+        return f'{self.street}, {self.zip_code} {self.city}. {self.open_hours} Kontakt: {self.phone}'
+
+class Employee:
+    def __init__(self, first_name:str, last_name: str,
+                 hire_date: str, birth_date: str, city: str, street: str, zip_code: str, phone: str):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.hire_date = hire_date
+        self.birth_date = birth_date
+        self.city = city
+        self.street = street
+        self.zip_code = zip_code
+        self.phone = phone
+
+    def __str__(self) -> str:
+        return f'{self.first_name} {self.last_name}, kontakt: {self.phone}'
+
+class Book:
+    def __init__(self, library: Library, publication_date: str, author_name: str, author_surname: str, number_of_pages: int):
+        self.library = library
+        self.publication_date = publication_date
+        self.author_name = author_name
+        self.author_surname = author_surname
+        self.number_of_pages = number_of_pages
+    
+    def __str__(self) -> str:
+        return f'Ksiazka {self.author_name} {self.author_surname} zostala wydana w {self.publication_date}'
+
+class Order:
+    def __init__(self, employee: Employee, student: Student, books: list, order_date: str):
+        self.employee = employee
+        self.student = student
+        self.books = books
+        self.order_date = order_date
+
+    def __str__(self) -> str:
+        i = 0
+        while i < len(self.books):
+           print(f'W dniu {self.order_date} zlozono zamowienie na {self.books[i]} przez studenta {self.student}. Obsluzyl je {self.employee}')
+           i += 1
+        return 'Koniec zamowienia'
+
+library_1 = Library('Katowice', 'Powstancow', '40-000', '8:00-20:00', '500 400 300')
+library_2 = Library('Katowice', 'Plebiscytowa', '40-000','9:00-21:00', '600 500 400')
+
+book_1 = Book(library_1, "10-10-1000", "Henryk", "Sienkiewicz", 500)
+book_2 = Book(library_1, "11-11-1000", "Henryk", "Sienkiewicz", 600)
+book_3 = Book(library_2, "12-12-1000", "Henryk", "Sienkiewicz", 700)
+book_4 = Book(library_2, "13-11-1000", "Henryk", "Sienkiewicz", 800)
+book_5 = Book(library_2, "14-12-1000", "Henryk", "Sienkiewicz", 900)
+
+employee_1 = Employee('Tomek', 'Kot', '11-11-1918', '11-11-1900', 'Sosnowiec', 'Bedzinska', '40-001', '555 555 555')
+employee_2 = Employee('Romek', 'Kot', '11-11-1918', '11-11-1900', 'Sosnowiec', 'Bedzinska', '40-001', '666 666 666')
+employee_3 = Employee('Lomek', 'Kot', '11-11-1918', '11-11-1900', 'Sosnowiec', 'Bedzinska', '40-001', '777 777 777')
+
+order_1 = Order(employee_1, student_2, [book_1, book_2], '18.10.2022')
+order_2 = Order(employee_3, student_3, [book_3, book_3, book_5], '17.10.2022')
+
+print(order_1)
+print(order_2)

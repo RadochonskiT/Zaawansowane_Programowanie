@@ -1,3 +1,4 @@
+#lab_3
 def IsEven(number: int) -> bool:
     restFromDividing = number % 2
     isEven = True
@@ -10,3 +11,12 @@ if (isEven):
     print("Liczba parzysta")
 else:
     print("Liczba nieparzysta")
+
+#lab_2
+def PrintEven(numbers):
+    for number in numbers:
+        if number % 2 == 0:
+            print(number)
+
+numbers = range(10, 21, 1)
+PrintEven(numbers)

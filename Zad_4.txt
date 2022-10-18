@@ -1,0 +1,8 @@
+def IsSumHigherThan(numberOne: int, numberTwo: int, compareTo: int) -> bool:
+    sum = numberOne + numberTwo
+    if (sum > compareTo):
+        return True
+    else:
+        return False
+
+print(IsSumHigherThan(10, 11, 20))

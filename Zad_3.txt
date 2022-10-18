@@ -1,0 +1,12 @@
+def IsEven(number: int) -> bool:
+    restFromDividing = number % 2
+    isEven = True
+    if (restFromDividing > 0):
+        isEven = False
+    return isEven
+
+isEven = IsEven(12)
+if (isEven):
+    print("Liczba parzysta")
+else:
+    print("Liczba nieparzysta")

@@ -1,0 +1,6 @@
+def ProductNumbers(numberOne: int, numberTwo: int) -> int:
+    product = numberOne * numberTwo
+    return product
+
+product = ProductNumbers(10, 20)
+print(product)

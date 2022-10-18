@@ -36,7 +36,6 @@ class Brawery:
                  json_dct['website_url'], json_dct['updated_at'],
                 json_dct['created_at'])
 
-
 response = req.get("https://api.openbrewerydb.org/breweries?per_page=20").text
 braweries = json.loads(response, object_hook=Brawery.from_json)
 for brawery in braweries:

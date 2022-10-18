@@ -1,3 +1,12 @@
+#lab_3
+def HelloUser(name: str, surname: str) -> str:
+    nameAndSurname = "Cześć " + name + " " + surname + "!"
+    return nameAndSurname
+
+nameAndSurname = HelloUser("Tomek", "Radochoński")
+print(nameAndSurname)
+
+#lab_2
 def PrintNames(names):
     for name in names:
         print(name)

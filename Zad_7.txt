@@ -1,0 +1,43 @@
+import requests as req
+import json
+
+class Brawery:
+    def __init__(self, id, name, brewery_type, street, address_2, address_3, city, state, country_province, postal_code, country, longitude, latitude, phone, website_url, updated_at, created_at):
+        self.id = id
+        self.name = name
+        self.brewery_type = brewery_type
+        self.street = street
+        self.adress_2 = address_2
+        self.adress_3 = address_3
+        self.city = city
+        self.state = state
+        self.county_province = country_province
+        self.postal_code = postal_code
+        self.country = country
+        self.longitude = longitude
+        self.latitude = latitude
+        self.phone = phone
+        self.website_url = website_url
+        self.updated_at = updated_at
+        self.created_at = created_at
+
+    def __str__(self):
+        return f'Piwiarnia {self.name} ma swoją siedzibę w {self.city}, a jej strona internetowa to: {self.website_url}'
+
+    @staticmethod
+    def from_json(json_dct):
+        return Brawery(json_dct['id'], json_dct['name'],
+                      json_dct['brewery_type'], json_dct['street'],
+                     json_dct['address_2'], json_dct['address_3'],
+                    json_dct['city'], json_dct['state'],
+                   json_dct['county_province'], json_dct['postal_code'],
+                   json_dct['country'], json_dct['longitude'],
+                  json_dct['latitude'], json_dct['phone'],
+                 json_dct['website_url'], json_dct['updated_at'],
+                json_dct['created_at'])
+
+
+response = req.get("https://api.openbrewerydb.org/breweries?per_page=20").text
+braweries = json.loads(response, object_hook=Brawery.from_json)
+for brawery in braweries:
+    print(brawery)

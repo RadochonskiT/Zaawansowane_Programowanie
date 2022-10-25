@@ -1,11 +1,12 @@
 def PowerListTo3(listOne: list, listTwo: list) -> list:
     mergedList = listOne + listTwo
-    mergedListWithoutDuplicates = list ( dict.fromkeys(mergedList) )
+    mergedListWithoutDuplicates = list(dict.fromkeys(mergedList))
 
     i = 0
     while i < len(mergedListWithoutDuplicates):
         mergedListWithoutDuplicates[i] = mergedListWithoutDuplicates[i] ** 3
         i += 1
     return mergedListWithoutDuplicates
+
 
 print(PowerListTo3([1, 2], [2, 4]))

@@ -8,13 +8,15 @@ class Property:
     def __str__(self) -> str:
         return f'{self.area} {self.rooms} {self.price} {self.address}'
 
+
 class House(Property):
     def __init__(self, area: str, rooms: int, price: str, address: str, plot: int):
-       super().__init__(area, rooms, price, address)
-       self.plot = plot
+        super().__init__(area, rooms, price, address)
+        self.plot = plot
 
     def __str__(self) -> str:
         return f'{self.area} {self.rooms} {self.price} {self.address} {self.plot}'
+
 
 class Flat(Property):
     def __init__(self, area: str, rooms: int, price: str, address: str, floor: str):
@@ -23,6 +25,7 @@ class Flat(Property):
 
     def __str__(self) -> str:
         return f'{self.area} {self.rooms} {self.price} {self.address} {self.floor}'
+
 
 house = House("Florida", 2, "100 000 $", "xxx", 100)
 flat = Flat("Teksas", 3, "200 000 $", "yyy", 3)

@@ -1,0 +1,14 @@
+class Student:
+    def __init__(self, name: str, marks: list):
+        self.name = name
+        self.marks = marks
+
+    def __str__(self) -> str:
+        return f'student {self.name}'
+
+    def is_passed(self) -> bool:
+        average = mean(self.marks)
+        if average > 5.0:
+            return True
+        else:
+            return False

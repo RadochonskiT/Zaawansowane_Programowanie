@@ -1,0 +1,27 @@
+class Property:
+    def __init__(self, area: str, rooms: int, price: str, address: str):
+        self.area = area
+        self.rooms = rooms
+        self.price = price
+        self.address = address
+
+    def __str__(self) -> str:
+        return f'{self.area} {self.rooms} {self.price} {self.address}'
+
+
+class House(Property):
+    def __init__(self, area: str, rooms: int, price: str, address: str, plot: int):
+        super().__init__(area, rooms, price, address)
+        self.plot = plot
+
+    def __str__(self) -> str:
+        return f'{self.area} {self.rooms} {self.price} {self.address} {self.plot}'
+
+
+class Flat(Property):
+    def __init__(self, area: str, rooms: int, price: str, address: str, floor: str):
+        super().__init__(area, rooms, price, address)
+        self.floor = floor
+
+    def __str__(self) -> str:
+        return f'{self.area} {self.rooms} {self.price} {self.address} {self.floor}'

@@ -1,0 +1,13 @@
+class Order:
+    def __init__(self, employee: Employee, student: Student, books: list, order_date: str):
+        self.employee = employee
+        self.student = student
+        self.books = books
+        self.order_date = order_date
+
+    def __str__(self) -> str:
+        i = 0
+        while i < len(self.books):
+            print(f'W dniu {self.order_date} zlozono zamowienie na {self.books[i]} przez studenta {self.student}. Obsluzyl je {self.employee}')
+            i += 1
+        return 'Koniec zamowienia'
